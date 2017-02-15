@@ -5,7 +5,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0747C6F5-933B-4E66-BCAA-077B3F47DF37}</ProjectGuid>
+    <ProjectGuid>{FBA21C0B-696F-476F-BB25-958AB90C2BA2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AspBookLibrary.Tests</RootNamespace>
@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AspBookLibrary\AspBookLibrary.csproj">
-      <Project>{B5D2BDDA-E9C5-49F0-95DD-7F930F637E42}</Project>
+      <Project>{61A953DB-FF98-40C5-8982-BC0FB888CABA}</Project>
       <Name>AspBookLibrary</Name>
     </ProjectReference>
   </ItemGroup>
