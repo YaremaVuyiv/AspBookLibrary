@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "Microsoft.AspNet.ConfigurationModel": "0.1-alpha-*",
+    "SomeProject": ""
+  }
+}
