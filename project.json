@@ -5,6 +5,9 @@
   },
   "dependencies": {
   },
+  "runtimes": {
+    "ubuntu.14.04-x64": { }
+  },
   "code": ["**/*.cs", "/Shared/*.cs"],
   "frameworks": {
     "dnx451": {
@@ -15,7 +18,7 @@
     },
     "dnxcore50": {
       "dependencies": {
-        "System.Collections": "4.0.10",
+        "System.Collections": "4.0.11",
         "System.Collections.Concurrent": "4.0.0.0",
         "System.ComponentModel": "4.0.0.0",
         "System.Console": "4.0.0.0",
