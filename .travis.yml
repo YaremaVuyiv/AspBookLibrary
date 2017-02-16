@@ -1,26 +1,2 @@
 language: csharp
 solution: AspBookLibrary.sln
-
-matrix:
-  include:
-    - os: linux
-      mono: latest
-      sudo: false
-    - os: linux
-      mono: alpha
-      sudo: false
-
-notifications:
-  email:
-    on_success: change
-    on_failure: always
-
-install:
-  - env
-  - ls -la $HOME
-  - ls -la $HOME/.config || true
-  - ls -la $HOME/.config/.mono || true
-  - nuget restore
-  - ls -la $HOME
-  - ls -la $HOME/.config || true
-  - ls -la $HOME/.config/.mono || true
