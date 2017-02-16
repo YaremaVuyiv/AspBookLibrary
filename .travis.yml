@@ -26,4 +26,4 @@ install:
   - ls -la $HOME/.config/.mono || true
 
 script:
-  - if [ -z "${DOTNETCORE}" ]; then xbuild /p:Configuration=Release AspBookLibrary.sln; fi
+  - xbuild /p:Configuration=Release AspBookLibrary.sln; fi
