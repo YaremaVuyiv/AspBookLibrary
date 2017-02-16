@@ -24,6 +24,3 @@ install:
   - ls -la $HOME
   - ls -la $HOME/.config || true
   - ls -la $HOME/.config/.mono || true
-
-script:
-  - xbuild /p:Configuration=Release AspBookLibrary.sln
