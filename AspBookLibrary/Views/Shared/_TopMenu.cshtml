@@ -1,0 +1,14 @@
+﻿<div class="ui top fixed menu">
+    <div class="item">
+        <img src="~/Content/images/favicon.png">
+    </div>
+    <a class="item" href='@Url.Action("Index", "Home")'>
+        Home
+    </a>
+    <a class="item" href='@Url.Action("Contact", "Home")'>
+        Categories
+    </a>
+    <div class="right menu">
+        @Html.Partial("_LoginPartial")
+    </div>
+</div>

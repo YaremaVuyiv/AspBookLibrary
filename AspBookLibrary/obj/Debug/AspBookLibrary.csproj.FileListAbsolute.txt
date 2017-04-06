@@ -94,3 +94,4 @@ C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.W
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csprojResolveAssemblyReference.cache
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.dll
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.pdb
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\WebActivatorEx.dll
