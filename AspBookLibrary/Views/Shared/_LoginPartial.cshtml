@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using System.Security.Claims
+@using AspBookLibrary.Extensions
 
 @if (Request.IsAuthenticated)
 {
@@ -8,7 +9,12 @@
 
         <li class="nav-item"><a href="@Url.Action("AddBook", "Books")" class="nav-link btn btn-sm align-middle btn-outline-success">Upload Book</a></li> //btn btn-sm align-middle btn-outline-primary
         <li class="nav-item">
-            @Html.ActionLink("Account", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage", @class = "nav-link"})
+            <a href="@Url.Action("Index", "Manage")" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="User Account">
+                @if (User.Identity.GetUserAvatar() != String.Empty)
+                {
+                    <img src="~/Content/images/@User.Identity.GetUserAvatar()" class="rounded" width="35" height="35"/>
+                }
+            </a>
         </li>
         <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
     }

@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -7,6 +10,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AspBookLibrary.Models;
+using Microsoft.ApplicationInsights.Extensibility.Implementation;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AspBookLibrary.Controllers
 {
@@ -136,6 +141,83 @@ namespace AspBookLibrary.Controllers
         }
 
         //
+        // GET: /Manage/AddPhoneNumber
+        public ActionResult EditUserInfo()
+        {
+            var user = UserManager.FindByIdAsync(User.Identity.GetUserId());
+            EditUserInformationViewModel model = new EditUserInformationViewModel
+            {
+                Address1 = user.Result.Address1,
+                Address2 = user.Result.Address2,
+                Firstname = user.Result.Firstname,
+                Lastname = user.Result.Lastname
+            };
+
+            ViewBag.AvatarUrl = user.Result.AvatarUrl;
+
+            return View(model);
+        }
+
+        //
+        // POST: /Manage/AddPhoneNumber
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditUserInfo(EditUserInformationViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+
+            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            var manager = new UserManager<ApplicationUser>(store);
+            var user = await manager.FindByIdAsync(User.Identity.GetUserId());
+
+            if(System.IO.File.Exists(Path.Combine(HttpContext.Server.MapPath("~/Content/images"), user.AvatarUrl)))
+                System.IO.File.Delete(Path.Combine(HttpContext.Server.MapPath("~/Content/images"), user.AvatarUrl));
+
+            var fileName = UploadPhoto(model.AvatarImage);
+
+            user.Firstname = model.Firstname;
+            user.Lastname = model.Lastname;
+            user.Address1 = model.Address1;
+            user.Address2 = model.Address2;
+            user.AvatarUrl = fileName;
+
+            await manager.UpdateAsync(user);
+
+            var ctx = store.Context;
+            ctx.SaveChanges();
+
+            if (user != null)
+            {
+                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            }
+
+            return RedirectToAction("EditUserInfo");
+        }
+
+        public string UploadPhoto(HttpPostedFileBase file)
+        {
+            if (file != null)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var rondom = Guid.NewGuid() + fileName;
+                var path = Path.Combine(HttpContext.Server.MapPath("~/Content/images/avatars"), rondom);
+                var filePathToSave = "avatars/" + fileName;
+                if (!Directory.Exists(HttpContext.Server.MapPath("~/Content/images/avatars")))
+                {
+                    Directory.CreateDirectory(HttpContext.Server.MapPath("~/Content/images/avatars"));
+                }
+                file.SaveAs(path);
+
+                return "avatars/" + rondom;
+            }
+            return string.Empty;
+        }
+
+        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -246,36 +328,6 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
-            return View(model);
-        }
-
-        //
-        // GET: /Manage/ChangeDetails
-        public ActionResult ChangeDetails()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Manage/ChangeDetails
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangeDetails(ChangePasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            
-
-            if (user != null)
-            {
-                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-            }
-            return RedirectToAction("Index", new {Message = ManageMessageId.ChangePasswordSuccess});
-
             return View(model);
         }
 

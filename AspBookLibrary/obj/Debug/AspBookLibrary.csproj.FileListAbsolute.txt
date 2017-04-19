@@ -195,3 +195,5 @@ C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookL
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialBaseline.resources
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookMigration.resources
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookContextMigration.resources
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.UserInfo.resources
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.AddedAvatar.resources

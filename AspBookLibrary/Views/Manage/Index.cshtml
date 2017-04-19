@@ -17,11 +17,11 @@
         <h5>Your uploaded books</h5>
 
         <div class="row">
-            @foreach (BookModels book in ViewBag.Books)
+            @foreach (BookModel book in ViewBag.Books)
             {
                 <div class="col-sm-6" style="margin-bottom: 25px;">
                     <div class="book-card-preview card card-inverse card-no-border">
-                        <img class="card-img" src="@book.PictureFileUrl" alt="@book.Title">
+                        <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
                         <div class="card-img-overlay">
                             <h2 class="card-title">@book.Title</h2>
                             <p class="card-text">@book.Description.</p>
@@ -37,21 +37,26 @@
     </div>
     <div class="col">
         <h5>Account settings</h5>
+        
+        <div class="form-group">
+            <a href="@Url.Action("EditUserInfo")" class="btn btn-secondary btn-block">Edit account details</a>
+            <small class="form-text text-muted">You can change your avatar, first and last names, address and more.</small>
+        </div>
 
         <div class="form-group">
             @if (Model.HasPassword)
             {
-                <a href="@Url.Action("ChangePassword")" class="btn btn-secondary">Change your password</a>
+                <a href="@Url.Action("ChangePassword")" class="btn btn-secondary btn-block">Change your password</a>
             }
             else
             {
-                <a href="@Url.Action("SetPassword")" class="btn btn-secondary">Create password</a>
+                <a href="@Url.Action("SetPassword")" class="btn btn-secondary btn-block">Create password</a>
             }
             <small class="form-text text-muted">Choose strong password if you think your current password is too weak.</small>
         </div>
         
         <div class="form-group">
-            <a href="@Url.Action("ManageLogins")" class="btn btn-secondary">Manage your applications logins</a>
+            <a href="@Url.Action("ManageLogins")" class="btn btn-secondary btn-block">Manage your applications logins</a>
             <small class="form-text text-muted">Currently you have authentificated @Model.Logins.Count login methods.</small>
         </div>
     </div>

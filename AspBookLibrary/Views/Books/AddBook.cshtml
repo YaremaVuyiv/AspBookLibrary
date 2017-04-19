@@ -1,4 +1,4 @@
-﻿@model AspBookLibrary.Models.BookModels
+﻿@model AspBookLibrary.Models.BookAddViewModel
 
 @{
     ViewBag.Title = "Upload";
@@ -8,20 +8,20 @@
 <div class="alert alert-info"><strong>Heads up!</strong> Before proceeding please be shure to enter all field correctly.</div>
 <br/>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddBook", "Books", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-group row">
         @Html.ValidationSummary(true, "", new { @class = "text-danger form-control-feedback" })
     </div>
-
+    
     <div class="form-group row">
-        @Html.LabelFor(model => model.PictureFileUrl, htmlAttributes: new { @class = "control-label col-2" })
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.PictureFileUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "http://www.website.com/picture.png" } })
-            @Html.ValidationMessageFor(model => model.PictureFileUrl, "", new { @class = "text-danger form-control-feedback" })
-        </div>
+        @Html.LabelFor(model => model.PictureFile, new { @class = "col-2 control-label" })
+        <label class="col-md-6 input-group">
+            <input type="file" id="file" name="PictureFile" class="form-control">
+            <span class="input-group-addon">Browse</span>
+        </label>
     </div>
 
     <div class="form-group row">
@@ -49,11 +49,11 @@
     </div>
 
     <div class="form-group row">
-        @Html.LabelFor(model => model.BookFileUrl, htmlAttributes: new { @class = "control-label col-2" })
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.BookFileUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "http://www.website.com/book.pdf" } })
-            @Html.ValidationMessageFor(model => model.BookFileUrl, "", new { @class = "text-danger form-control-feedback" })
-        </div>
+        @Html.LabelFor(model => model.BookFile, new { @class = "col-2 control-label" })
+        <label class="col-md-6 input-group">
+            <input type="file" id="file" name="BookFile" class="form-control">
+            <span class="input-group-addon">Browse</span>
+        </label>
     </div>
 
     <div class="form-group row form-inline">

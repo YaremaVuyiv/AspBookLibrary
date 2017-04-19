@@ -183,7 +183,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\BookContext.cs" />
+    <Compile Include="Extensions\IdentityExtentions.cs" />
+    <Compile Include="Migrations\201704191124151_UserInfo.cs" />
+    <Compile Include="Migrations\201704191124151_UserInfo.Designer.cs">
+      <DependentUpon>201704191124151_UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704191225564_AddedAvatar.cs" />
+    <Compile Include="Migrations\201704191225564_AddedAvatar.Designer.cs">
+      <DependentUpon>201704191225564_AddedAvatar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -214,7 +223,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BookModels.cs" />
+    <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\GenreModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -291,8 +300,11 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Manage\EditUserInfo.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -311,6 +323,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704180913035_BookContextMigration.resx">
       <DependentUpon>201704180913035_BookContextMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704191124151_UserInfo.resx">
+      <DependentUpon>201704191124151_UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704191225564_AddedAvatar.resx">
+      <DependentUpon>201704191225564_AddedAvatar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,8 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace AspBookLibrary.Models
 {
+    public class EditUserInformationViewModel
+    {
+        [Display(Name = "Avatar")]
+        public HttpPostedFileBase AvatarImage { get; set; }
+
+        [Display(Name = "First name")] 
+        public string Firstname { get; set; }
+        
+        [Display(Name = "Last name")]
+        public string Lastname { get; set; }
+
+        [Display(Name = "Address 1")]
+        public string Address1 { get; set; }
+
+        [Display(Name = "Address 2")]
+        public string Address2 { get; set; }
+    }
+
     public class ExternalLoginConfirmationViewModel
     {
         [Required]

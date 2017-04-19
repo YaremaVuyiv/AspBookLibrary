@@ -1,6 +1,9 @@
-﻿using System.Data.Entity.Infrastructure;
+﻿using System;
+using System.Data.Entity.Infrastructure;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Web;
 using System.Web.Mvc;
 using AspBookLibrary.App_Data;
 using AspBookLibrary.Models;
@@ -23,6 +26,15 @@ namespace AspBookLibrary.Controllers
 
             if (book != null)
             {
+                try
+                {
+                    System.IO.File.Delete("~/Content/books/" + book.BookFileUrl);
+                    System.IO.File.Delete("~/Content/images/thumbnails/" + book.PictureFileUrl);
+                }
+                catch
+                {
+                }
+
                 context.Books.Remove(book);
                 context.SaveChanges();
 
@@ -55,7 +67,7 @@ namespace AspBookLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(BookModels model)
+        public ActionResult Edit(BookModel model)
         {
             BookContext db = new BookContext();
             var bookToUpdate = db.Books.Find(model.BookId);
@@ -75,15 +87,27 @@ namespace AspBookLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddBook(BookModels newBook)
+        public ActionResult AddBook(BookAddViewModel model)
         {
             if (ModelState.IsValid)
             {
                 using (var bookDb = new BookContext())
                 {
-                    newBook.Rating = 0;
-                    
-                    bookDb.Books.Add(newBook);
+                    BookModel book = new BookModel
+                    {
+                        Rating = 0,
+                        Author = model.Author,
+                        Description = model.Description,
+                        Title = model.Title
+                    };
+
+                    string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
+                    string bookPath = UploadFile(model.BookFile, "books");
+
+                    book.PictureFileUrl = imagePath;
+                    book.BookFileUrl = bookPath;
+
+                    bookDb.Books.Add(book);
                     int result = bookDb.SaveChanges();
                 }
 
@@ -91,8 +115,24 @@ namespace AspBookLibrary.Controllers
             }
             else
             {
-                return View(newBook);
+                return View(model);
             }
+        }
+
+        public string UploadFile(HttpPostedFileBase file, string pathPart)
+        {
+            if (file == null) return string.Empty;
+
+            var fileName = Path.GetFileName(file.FileName);
+            var random = Guid.NewGuid() + fileName;
+            var path = Path.Combine(HttpContext.Server.MapPath("~/Content/" + pathPart), random);
+            if (!Directory.Exists(HttpContext.Server.MapPath("~/Content/" + pathPart)))
+            {
+                Directory.CreateDirectory(HttpContext.Server.MapPath("~/Content/" + pathPart));
+            }
+            file.SaveAs(path);
+
+            return random;
         }
     }
 }

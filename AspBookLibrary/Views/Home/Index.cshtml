@@ -12,15 +12,15 @@
 </div>
 
 <div class="row">
-    @foreach (BookModels book in @ViewBag.Books)
+    @foreach (BookModel book in @ViewBag.Books)
     {
-        <div class="col-md-4">      
+        <div class="col-md-4" style="margin-bottom: 25px;">      
             <div class="book-card-layout card card-inverse card-no-border">
-                <img class="card-img" src="@book.PictureFileUrl" alt="@book.Title">
+                <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
                 <div class="card-img-overlay">
                     <h2 class="card-title book-title-font">@book.Title</h2>
                     <p class="card-text">@book.Description.</p>
-                    <p class="align-bottom"><a class="btn btn-outline-secondary" href="@book.BookFileUrl">Start Reading</a></p>
+                    <p class="align-bottom"><a class="btn btn-outline-secondary" href="~/Content/books/@book.BookFileUrl">Start Reading</a></p>
                 </div>
             </div>
         </div>
