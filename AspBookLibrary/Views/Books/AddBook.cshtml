@@ -1,0 +1,71 @@
+﻿@model AspBookLibrary.Models.BookModels
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<p>Here you can post a new book to the website.</p>
+<div class="alert alert-info"><strong>Heads up!</strong> Before proceeding please be shure to enter all field correctly.</div>
+<br/>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group row">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger form-control-feedback" })
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.PictureFileUrl, htmlAttributes: new { @class = "control-label col-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.PictureFileUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "http://www.website.com/picture.png" } })
+            @Html.ValidationMessageFor(model => model.PictureFileUrl, "", new { @class = "text-danger form-control-feedback" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Title, new {htmlAttributes = new {@class = "form-control", @placeholder="Book title"}})
+            @Html.ValidationMessageFor(model => model.Title, "", new {@class = "text-danger form-control-feedback" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Author, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Author, new {htmlAttributes = new {@class = "form-control", @placeholder = "Book author" } })
+            @Html.ValidationMessageFor(model => model.Author, "", new {@class = "text-danger form-control-feedback" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-6">
+            @Html.TextAreaFor(model => model.Description, new {@class = "form-control", @placeholder = "Short description", @rows=4 })
+            @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger form-control-feedback" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.BookFileUrl, htmlAttributes: new { @class = "control-label col-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.BookFileUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "http://www.website.com/book.pdf" } })
+            @Html.ValidationMessageFor(model => model.BookFileUrl, "", new { @class = "text-danger form-control-feedback" })
+        </div>
+    </div>
+
+    <div class="form-group row form-inline">
+        <div class="col-md-auto">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+        <div class="col">
+            <input type="submit" value="Create Book" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

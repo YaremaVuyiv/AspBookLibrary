@@ -1,23 +1,28 @@
-﻿@{
+﻿@using AspBookLibrary.App_Data
+@using AspBookLibrary.Models
+@{
     ViewBag.Title = "Home";
 }
-<br />
 
-<div class="ui container">
-    <div class="ui two column centered grid" style="padding-top: 200px; padding-bottom: 75px;">
-        <div class="column">
-            <div class="ui fluid icon input large">
-                <input type="text" placeholder="Search...">
-                <i class="search icon"></i>
-            </div>
-        </div>
-    </div>
-    <div class="ui four column centered grid raised segment" style="border: none">
-        @Html.Partial("_BookCardView", null, new ViewDataDictionary { { "Title", "Interesting Book" }, { "Author", "O Henry" }, { "Genre", "Detective" } })
-        @Html.Partial("_BookCardView", null, new ViewDataDictionary { { "Title", "Interesting Book" }, { "Author", "O Henry" }, { "Genre", "Detective" } })
-        @Html.Partial("_BookCardView", null, new ViewDataDictionary { { "Title", "Interesting Book" }, { "Author", "O Henry" }, { "Genre", "Detective" } })
-        @Html.Partial("_BookCardView", null, new ViewDataDictionary { { "Title", "Interesting Book" }, { "Author", "O Henry" }, { "Genre", "Detective" } })
-    </div>
+<div class="jumbotron">
+    <p class="lead text-center">Search for tons of books posted everyday for you on students book shelf</p>
+    <form class="row justify-content-center">
+        <input class="form-control form-control-lg col-md-8 input-no-border" style="border: none;" type="text" placeholder="Start typing . . .">
+    </form>
 </div>
 
-@Html.Partial("_Footer")
+<div class="row">
+    @foreach (BookModels book in @ViewBag.Books)
+    {
+        <div class="col-md-4">      
+            <div class="book-card-layout card card-inverse card-no-border">
+                <img class="card-img" src="@book.PictureFileUrl" alt="@book.Title">
+                <div class="card-img-overlay">
+                    <h2 class="card-title book-title-font">@book.Title</h2>
+                    <p class="card-text">@book.Description.</p>
+                    <p class="align-bottom"><a class="btn btn-outline-secondary" href="@book.BookFileUrl">Start Reading</a></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

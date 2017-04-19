@@ -1,97 +1,58 @@
-﻿@model AspBookLibrary.Models.IndexViewModel
+﻿@using System.Resources
+@using AspBookLibrary.Models
+@model AspBookLibrary.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage Account";
+    ViewBag.Title = "Account Management";
 }
-<div class="ui content" style="padding-top: 100px;padding-bottom: 100px">
-    <div class="ui two columns centered grid">
-        <div class="column">
-            <div class="ui segments">
-                <div class="ui segment">
-                    <h2>@ViewBag.Title</h2>
-                </div>
-                <div class="ui segment">
-                    <p class="ui green label">@ViewBag.StatusMessage</p>
-                    <div class="ui form">
-                        <div class="field">
-                            <label>Password:</label>
-                            @if (Model.HasPassword)
-                            {
-                                <a class="ui button" href='@Url.Action("ChangePassword", "Manage")'>Change your password</a>
-                            }
-                            else
-                            {
-                                <a class="ui button" href='@Url.Action("SetPassword", "Manage")'>Create password</a>
-                            }
-                        </div>
-                        <div class="field">
-                            <label>External Logins:</label>
-                                <div class="ui button" href='@Url.Action("ManageLogins", "Manage")'>
-                                    Manage external logins
-                                </div>
-                                <a class="ui basic label">
-                                    @Model.Logins.Count
-                                </a>
-                        </div>
-                        @*
-                    Phone Numbers can used as a second factor of verification in a two-factor authentication system.
 
-                     See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                        for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+@if (ViewBag.StatusMessage != null && ViewBag.StatusMessage != string.Empty)
+{
+    <div class="alert alert-success" role="alert">
+        <strong>Hey there!</strong> @ViewBag.StatusMessage
+    </div>
+}
 
-                     Uncomment the following block after you have set up two-factor authentication
-                        *@
-                        @*
-                    <dt>Phone Number:</dt>
-                    <dd>
-                        @(Model.PhoneNumber ?? "None")
-                        @if (Model.PhoneNumber != null)
-                        {
-                            <br />
-                            <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                            using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
-                            }
-                        }
-                        else
-                        {
-                            <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                        }
-                    </dd>
-                        *@
-                        <div class="field">
-                            <label>Two-Factor Authentication:</label>
-                            <div class="ui orange label">
-                                <p>
-                                    There are no two-factor authentication providers configured.<br />See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                                    for details on setting up this ASP.NET application to support two-factor authentication.
-                                </p>
-                                @*@if (Model.TwoFactor)
-                                {
-                                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        <text>Enabled
-                                        <input type="submit" value="Disable" class="btn btn-link" />
-                                        </text>
-                                    }
-                                }
-                                else
-                                {
-                                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        <text>Disabled
-                                        <input type="submit" value="Enable" class="btn btn-link" />
-                                        </text>
-                                    }
-                                }*@
-                            </div>
+<div class="row">
+    <div class="col">
+        <h5>Your uploaded books</h5>
+
+        <div class="row">
+            @foreach (BookModels book in ViewBag.Books)
+            {
+                <div class="col-sm-6" style="margin-bottom: 25px;">
+                    <div class="book-card-preview card card-inverse card-no-border">
+                        <img class="card-img" src="@book.PictureFileUrl" alt="@book.Title">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title">@book.Title</h2>
+                            <p class="card-text">@book.Description.</p>
+                            <p class="align-bottom">
+                                <a href="@Url.Action("Edit", "Books", new { id = @book.BookId })" class="btn btn-secondary">Edit</a>
+                                <a href="@Url.Action("Delete", "Books", new { id = @book.BookId })" class="btn btn-danger">Delete</a>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+        </div>
+    </div>
+    <div class="col">
+        <h5>Account settings</h5>
+
+        <div class="form-group">
+            @if (Model.HasPassword)
+            {
+                <a href="@Url.Action("ChangePassword")" class="btn btn-secondary">Change your password</a>
+            }
+            else
+            {
+                <a href="@Url.Action("SetPassword")" class="btn btn-secondary">Create password</a>
+            }
+            <small class="form-text text-muted">Choose strong password if you think your current password is too weak.</small>
+        </div>
+        
+        <div class="form-group">
+            <a href="@Url.Action("ManageLogins")" class="btn btn-secondary">Manage your applications logins</a>
+            <small class="form-text text-muted">Currently you have authentificated @Model.Logins.Count login methods.</small>
         </div>
     </div>
 </div>

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using AspBookLibrary.App_Data;
+using Microsoft.Ajax.Utilities;
 
 namespace AspBookLibrary.Controllers
 {
@@ -10,7 +8,11 @@ namespace AspBookLibrary.Controllers
     {
         public ActionResult Index ()
         {
-            return View ();
+            BookContext context = new BookContext();
+            ViewBag.Books = context.Books;
+            ViewBag.Genres = context.Genres;
+
+            return View();
         }
 
         public ActionResult About ()

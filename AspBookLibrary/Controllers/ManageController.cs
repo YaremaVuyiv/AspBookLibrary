@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AspBookLibrary.App_Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -72,6 +72,11 @@ namespace AspBookLibrary.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
+            BookContext context = new BookContext();
+            ViewBag.Books = context.Books;
+            ViewBag.Genres = context.Genres;
+
             return View(model);
         }
 
@@ -241,6 +246,36 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
+            return View(model);
+        }
+
+        //
+        // GET: /Manage/ChangeDetails
+        public ActionResult ChangeDetails()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Manage/ChangeDetails
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeDetails(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            
+
+            if (user != null)
+            {
+                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            }
+            return RedirectToAction("Index", new {Message = ManageMessageId.ChangePasswordSuccess});
+
             return View(model);
         }
 

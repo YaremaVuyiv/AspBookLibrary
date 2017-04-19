@@ -1,0 +1,50 @@
+﻿@model AspBookLibrary.Models.BookModels
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+    <p>Editing your uploaded book <strong>"@Model.Title"</strong>.</p>
+    <br />
+
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+    @Html.HiddenFor(model => model.BookId)
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.Title, "", new {@class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Author, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Author, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.Author, "", new {@class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-2">
+            <a href="@Url.Action("Index", "Manage")" class="btn btn-secondary">Back to List</a>
+        </div>
+        <div class="col">
+            <input type="submit" value="Save" class="btn btn-success"/>
+        </div>
+    </div>
+}
