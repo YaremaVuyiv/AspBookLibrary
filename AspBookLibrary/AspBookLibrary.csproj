@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\IdentityExtentions.cs" />
+    <Compile Include="Extensions\RoleTypes.cs" />
     <Compile Include="Migrations\201704191124151_UserInfo.cs" />
     <Compile Include="Migrations\201704191124151_UserInfo.Designer.cs">
       <DependentUpon>201704191124151_UserInfo.cs</DependentUpon>
@@ -192,7 +193,11 @@
     <Compile Include="Migrations\201704191225564_AddedAvatar.Designer.cs">
       <DependentUpon>201704191225564_AddedAvatar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookContext.cs" />
+    <Compile Include="Migrations\201704201123320_SafeMigration.cs" />
+    <Compile Include="Migrations\201704201123320_SafeMigration.Designer.cs">
+      <DependentUpon>201704201123320_SafeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\BookContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -302,9 +307,7 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Manage\EditUserInfo.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -329,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704191225564_AddedAvatar.resx">
       <DependentUpon>201704191225564_AddedAvatar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704201123320_SafeMigration.resx">
+      <DependentUpon>201704201123320_SafeMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

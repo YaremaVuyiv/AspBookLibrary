@@ -1,11 +1,15 @@
+using System.Collections.Generic;
+using System.Linq;
+using AspBookLibrary.Extensions;
+using AspBookLibrary.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace AspBookLibrary.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AspBookLibrary.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,20 +17,34 @@ namespace AspBookLibrary.Migrations
             ContextKey = "AspBookLibrary.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(AspBookLibrary.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            // Initialize default identity roles
+            var storeR = new RoleStore<IdentityRole>(context);
+            var managerR = new RoleManager<IdentityRole>(storeR);
+            List<IdentityRole> identityRoles = new List<IdentityRole>
+            {
+                new IdentityRole() { Name = RoleTypes.Member.Get() },
+                new IdentityRole() { Name = RoleTypes.Moderator.Get() },
+                new IdentityRole() { Name = RoleTypes.Administrator.Get() }
+            };
+            foreach (IdentityRole role in identityRoles)
+            {
+                if (!(context.Roles.Any(r => r.Name == role.Name)))
+                {
+                    managerR.Create(role);
+                }
+            }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            // Initialize default user
+            if (!(context.Users.Any(u => u.UserName == "admin@gmail.com")))
+            {
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+                var userToInsert = new ApplicationUser { UserName = "admin@gmail.com", PhoneNumber = "0123456789", AvatarUrl = "default.png", Firstname = "Administrator"};
+                userManager.Create(userToInsert, "1Admin!");
+                userManager.AddToRole(userToInsert.Id, RoleTypes.Administrator.Get());
+            }
         }
     }
 }

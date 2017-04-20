@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -21,7 +21,14 @@ namespace AspBookLibrary.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
 
             // Add custom user claims here
-            userIdentity.AddClaim(new Claim("UserAvatar", this.AvatarUrl.ToString()));
+            try
+            {
+                userIdentity.AddClaim(new Claim("UserAvatar", AvatarUrl));
+                userIdentity.AddClaim(new Claim("UserRole", Roles.First().ToString()));
+            }
+            catch
+            {
+            }
 
 
             return userIdentity;

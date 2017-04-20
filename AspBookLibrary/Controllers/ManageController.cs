@@ -1,16 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using AspBookLibrary.App_Data;
+using AspBookLibrary.Migrations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AspBookLibrary.Models;
-using Microsoft.ApplicationInsights.Extensibility.Implementation;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AspBookLibrary.Controllers
