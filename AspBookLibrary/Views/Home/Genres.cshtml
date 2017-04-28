@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Genres";
+}
+
+<div class="row">
+    @foreach (string item in @ViewBag.Paths)
+    {
+        <div class="col-md-4" style="margin-bottom: 25px;">
+            <a class="genre-card-layout card card-inverse card-no-border" href="#">
+                <img class="card-img" src="~/Content/images/genres/@item" width="100%">
+            </a>
+        </div>
+    }
+</div>
