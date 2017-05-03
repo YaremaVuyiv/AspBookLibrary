@@ -4,21 +4,37 @@ using System.Web;
 using System.Web.Mvc;
 using AspBookLibrary.App_Data;
 using AspBookLibrary.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AspBookLibrary.Controllers
 {
     public class BooksController : Controller
     {
+        private IBookRepository repository;
+
+        public BooksController()
+        {
+            repository = new BookRepository(new BookContext());
+        }
+
+
+
+        public BooksController(IBookRepository rep)
+        {
+            repository = rep;
+        }
+
         public ActionResult Delete(int? id)
         {
+            
+
             if (id == null)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Manage", new { Value = "Id is null" });
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
-            
+            var book = repository.GetById((long)id);
+
 
             if (book != null)
             {
@@ -31,14 +47,14 @@ namespace AspBookLibrary.Controllers
                 {
                 }
 
-                context.Books.Remove(book);
-                context.SaveChanges();
+                repository.Delete(book);
+                repository.Save();
 
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Manage", new { Value = "Succeed" });
             }
             else
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Manage", new { Value = "Book not found" });
             }
         }
 
@@ -46,11 +62,11 @@ namespace AspBookLibrary.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Index", "Manage", new { Value = "Id is null" });
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
+            var book = repository.GetById((long)id);
+
 
             if (book != null)
             {
@@ -65,16 +81,18 @@ namespace AspBookLibrary.Controllers
         [HttpPost]
         public ActionResult Edit(BookModel model)
         {
-            BookContext db = new BookContext();
-            var bookToUpdate = db.Books.Find(model.BookId);
+            var bookToUpdate = repository.GetById(model.BookId);
             bookToUpdate.Title = model.Title;
             bookToUpdate.Author = model.Author;
             bookToUpdate.Description = model.Description;
-            db.SaveChanges();
+
+
+            repository.Update(bookToUpdate);
+            repository.Save();
 
             ViewBag.StatusMessage = "Book information for " + model.Title + " was updated successfuly.";
 
-            return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
+            return RedirectToAction("Index", "Manage", new { Value = "Book information for " + model.Title + " was updated successfuly." });
         }
 
         public ActionResult AddBook()
@@ -87,27 +105,26 @@ namespace AspBookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var bookDb = new BookContext())
+
+                BookModel book = new BookModel
                 {
-                    BookModel book = new BookModel
-                    {
-                        Rating = 0,
-                        Author = model.Author,
-                        Description = model.Description,
-                        Title = model.Title
-                    };
+                    Rating = 0,
+                    Author = model.Author,
+                    Description = model.Description,
+                    Title = model.Title,
+                    UserId = User.Identity.GetUserId()
+                };
 
-                    string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
-                    string bookPath = UploadFile(model.BookFile, "books");
+                string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
+                string bookPath = UploadFile(model.BookFile, "books");
 
-                    book.PictureFileUrl = imagePath;
-                    book.BookFileUrl = bookPath;
+                book.PictureFileUrl = imagePath;
+                book.BookFileUrl = bookPath;
 
-                    bookDb.Books.Add(book);
-                    int result = bookDb.SaveChanges();
-                }
+                repository.Insert(book);
+                int result = repository.Save();
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", new { Value = "Book inserted" });
             }
             else
             {
