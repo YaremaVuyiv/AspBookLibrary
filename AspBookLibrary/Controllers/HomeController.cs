@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Net.Cache;
+using System.Web.Mvc;
 using AspBookLibrary.App_Data;
 using AspBookLibrary.Migrations;
 using Microsoft.Ajax.Utilities;
@@ -16,18 +17,28 @@ namespace AspBookLibrary.Controllers
             return View();
         }
 
-        public ActionResult About ()
+        public ActionResult Genres()
         {
-            ViewBag.Message = "Your application description page.";
+            string[] pathToImages = new string[12];
 
-            return View ();
+            for (int i = 1; i <= 12; i++)
+            {
+                pathToImages[i-1] = i + ".png";
+            }
+
+            ViewBag.Paths = pathToImages;
+
+            return View();
         }
 
-        public ActionResult Contact ()
+        public ActionResult Search()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View ();
+            if (!string.IsNullOrEmpty(Request["s"]))
+            {
+                ViewBag.SearchKeyword = Request["s"];
+                return View();
+            }
+            return View();
         }
     }
 }

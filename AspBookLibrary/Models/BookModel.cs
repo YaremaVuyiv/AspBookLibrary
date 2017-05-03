@@ -28,8 +28,6 @@ namespace AspBookLibrary.Models
 
         [Required(ErrorMessage = "File is required")]
         public string PictureFileUrl { get; set; }
-
-        public string UserId { get; set; }
     }
 
     public class BookAddViewModel
