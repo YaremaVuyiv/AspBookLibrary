@@ -1,0 +1,43 @@
+﻿@using AspBookLibrary.Extensions
+@using AspBookLibrary.Models
+@{
+    ViewBag.Title = "Genres";
+}
+
+<div class="row">
+    <div class="col-md-10 row">
+        @foreach (BookModel book in @ViewBag.Books)
+        {
+            <div class="col-md-4" style="margin-bottom: 25px;">
+                <div class="book-card-layout card card-inverse card-no-border">
+                    <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
+                    <div class="card-img-overlay">
+                        <h2 class="card-title book-title-font">@book.Title</h2>
+                        <p class="card-text">@book.Description.</p>
+                        <p class="align-bottom"><a class="btn btn-outline-secondary" href="~/Content/books/@book.BookFileUrl">Start Reading</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-2">
+        @using (Html.BeginForm("Books", "Home", FormMethod.Get))
+        {
+            <input type="hidden" name="genre" value="@Request["genre"]" />
+            <input type="search" name="title" class="form-control" placeholder="Search . . ." value="@Request["title"]"/>
+            <br/>
+        }
+        @foreach (string item in Enum.GetNames(typeof(GenreTypes)))
+        {
+            if (item == Request["genre"])
+            {
+                @Html.ActionLink(item, "Books", "Home", routeValues: new {genre = item}, htmlAttributes: new {id = "genresLink", @class = "btn btn-sm btn-success btn-lg btn-block", @style = "padding-top:6px;padding-bottom:6px;"})
+            }
+            else
+            {
+                @Html.ActionLink(item, "Books", "Home", routeValues: new {genre = item}, htmlAttributes: new {id = "genresLink", @class = "btn btn-sm btn-secondary btn-lg btn-block", @style = "padding-top:6px;padding-bottom:6px;"})
+            }
+        }
+    </div>
+</div>

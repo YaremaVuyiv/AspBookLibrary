@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using AspBookLibrary.Extensions;
 using AspBookLibrary.Migrations;
 using Microsoft.AspNet.Identity;
@@ -230,12 +231,15 @@ namespace AspBookLibrary.Controllers
         public ActionResult EditUserInfo()
         {
             var user = UserManager.FindByIdAsync(User.Identity.GetUserId());
+            var role = UserManager.GetRoles(user.Result.Id).First();
+
             EditUserInformationViewModel model = new EditUserInformationViewModel
             {
                 Address1 = user.Result.Address1,
                 Address2 = user.Result.Address2,
                 Firstname = user.Result.Firstname,
-                Lastname = user.Result.Lastname
+                Lastname = user.Result.Lastname,
+                Role = (RoleTypes)Enum.Parse(typeof(RoleTypes), role)
             };
 
             ViewBag.AvatarUrl = user.Result.AvatarUrl;
@@ -269,6 +273,10 @@ namespace AspBookLibrary.Controllers
             user.Address1 = model.Address1;
             user.Address2 = model.Address2;
             user.AvatarUrl = fileName;
+
+            foreach (var role in UserManager.GetRoles(user.Id))
+                UserManager.RemoveFromRole(user.Id, role);
+            UserManager.AddToRole(user.Id, model.Role.Get());
 
             await manager.UpdateAsync(user);
 

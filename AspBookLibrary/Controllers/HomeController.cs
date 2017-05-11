@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
-using AspBookLibrary.Extensions;
 
 namespace AspBookLibrary.Controllers
 {
@@ -17,36 +14,28 @@ namespace AspBookLibrary.Controllers
 
         public ActionResult Index ()
         {
-            ViewBag.Books = _repository.GetBooks();
+            ViewBag.Books = _repository.GetBooks().Take(3);
 
             return View();
         }
 
-        public ActionResult Genres(string name)
+        public ActionResult Books(string title, string genre)
         {
             var books = _repository.GetBooks();
-            var numberOfBooksForGenre =
-                Enum.GetNames(typeof(GenreTypes))
-                    .Select(
-                        genre =>
-                            new KeyValuePair<string, int>(genre, books.Where(b => b.Genre == genre).ToArray().Length))
-                    .ToList();
 
-            ViewBag.NumberOfBooksForGenre = numberOfBooksForGenre;
-
-            if (name != null)
-                ViewBag.Books = books.Where(book => book.Genre == name);
-
-            return View();
-        }
-
-        public ActionResult Search()
-        {
-            if (!string.IsNullOrEmpty(Request["s"]))
+            if (!string.IsNullOrEmpty(genre))
             {
-                ViewBag.SearchKeyword = Request["s"];
-                return View();
+                ViewBag.Books = !string.IsNullOrEmpty(title)
+                    ? books.Where(book => book.Genre == genre && book.Title.ToLower().Contains(title.ToLower()))
+                    : books.Where(book => book.Genre == genre);
             }
+            else
+            {
+                ViewBag.Books = !string.IsNullOrEmpty(title)
+                    ? books.Where(book => book.Title.ToLower().Contains(title.ToLower()))
+                    : books;
+            }
+
             return View();
         }
     }

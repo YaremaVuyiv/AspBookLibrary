@@ -5,15 +5,22 @@
 
 <div class="jumbotron">
     <p class="lead text-center">Search for tons of books posted everyday for you on students book shelf</p>
-    <form class="row justify-content-center">
-        <input class="form-control form-control-lg col-md-8 input-no-border" style="border: none;" type="text" placeholder="Start typing . . .">
-    </form>
+    <div class="text-center">
+        @if (Request.IsAuthenticated)
+        {
+            <a href="@Url.Action("AddBook", "Books")" class="btn btn-lg btn-success">Start uploading your new Book</a>
+        }
+        else
+        {
+            @Html.ActionLink("Log in to start adding Books!", "Login", "Account", routeValues: new { returnUrl = "/manage" }, htmlAttributes: new { id = "loginLink", @class = "btn btn-lg btn-primary" })
+        }
+    </div>
 </div>
 
 <div class="row">
     @foreach (BookModel book in @ViewBag.Books)
     {
-        <div class="col-md-4" style="margin-bottom: 25px;">      
+        <div class="col-md-4" style="margin-bottom: 25px;">
             <div class="book-card-layout card card-inverse card-no-border">
                 <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
                 <div class="card-img-overlay">

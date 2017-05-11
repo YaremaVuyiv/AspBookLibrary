@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
+using AspBookLibrary.Extensions;
 
 namespace AspBookLibrary.Models
 {
@@ -14,6 +15,9 @@ namespace AspBookLibrary.Models
 
         [Display(Name = "Last name")]
         public string Lastname { get; set; }
+
+        [Display(Name = "User Role")]
+        public RoleTypes Role { get; set; }
 
         [Display(Name = "Address 1")]
         public string Address1 { get; set; }
