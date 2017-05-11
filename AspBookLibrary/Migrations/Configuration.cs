@@ -26,7 +26,7 @@ namespace AspBookLibrary.Migrations
             {
                 new IdentityRole() { Name = RoleTypes.Member.Get() },
                 new IdentityRole() { Name = RoleTypes.Moderator.Get() },
-                new IdentityRole() { Name = RoleTypes.Administrator.Get() }
+                new IdentityRole() { Name = RoleTypes.Manager.Get() }
             };
             foreach (IdentityRole role in identityRoles)
             {
@@ -41,9 +41,9 @@ namespace AspBookLibrary.Migrations
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var userToInsert = new ApplicationUser { UserName = "admin@gmail.com", PhoneNumber = "0123456789", AvatarUrl = "default.png", Firstname = "Administrator"};
+                var userToInsert = new ApplicationUser { UserName = "admin@gmail.com", PhoneNumber = "0123456789", AvatarUrl = "default.png", Firstname = "Manager"};
                 userManager.Create(userToInsert, "1Admin!");
-                userManager.AddToRole(userToInsert.Id, RoleTypes.Administrator.Get());
+                userManager.AddToRole(userToInsert.Id, RoleTypes.Manager.Get());
             }
         }
     }

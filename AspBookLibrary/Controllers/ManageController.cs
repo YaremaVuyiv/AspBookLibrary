@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AspBookLibrary.Extensions;
 using AspBookLibrary.Migrations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -84,6 +85,39 @@ namespace AspBookLibrary.Controllers
             ViewBag.Users = _db.Users.ToList();
 
             return View(model);
+        }
+
+        //
+        // GET: /Manage/Users
+        [Authorize(Roles = "Manager")]
+        public ActionResult Users()
+        {
+            ViewBag.Users = _db.Users.ToList();
+
+            return View();
+        }
+
+        //
+        // DELETE: /Manage/DeleteUser
+        [Authorize(Roles = "Manager")]
+        public async Task<ActionResult> DeleteUser(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Users", "Manage");
+            }
+
+            var user = _db.Users.Find(id);
+            if (user != null)
+            {
+                await UserManager.DeleteAsync(user);
+
+                return RedirectToAction("Users", "Manage");
+            }
+            else
+            {
+                return RedirectToAction("Users", "Manage");
+            }
         }
 
         //

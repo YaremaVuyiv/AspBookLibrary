@@ -8,7 +8,13 @@
         @Html.AntiForgeryToken()
 
         <li class="nav-item">@Html.ActionLink("Genres", "Genres", "Home", routeValues: null, htmlAttributes: new { id = "genresLink", @class = "nav-link" })</li>
-        <li class="nav-item"><a href="@Url.Action("AddBook", "Books")" class="nav-link btn align-middle">Upload Book</a></li> //btn btn-sm align-middle btn-outline-primary
+        <li class="nav-item"><a href="@Url.Action("AddBook", "Books")" class="nav-link">Upload Book</a></li>
+
+        if (User.IsInRole(RoleTypes.Manager.Get()))
+        {
+            <li class="nav-item"><a href="@Url.Action("Users", "Manage")" class="nav-link">Manage Users</a></li>
+        }
+
         <li class="nav-item">
             <a href="@Url.Action("Index", "Manage")" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="User Account">
                 @if (User.Identity.GetUserAvatar() != String.Empty)
