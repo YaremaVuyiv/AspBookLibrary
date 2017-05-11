@@ -1,14 +1,26 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AspBookLibrary.App_Data;
+using AspBookLibrary.Extensions;
 using AspBookLibrary.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AspBookLibrary.Controllers
 {
     public class BooksController : Controller
     {
+        private readonly IBookRepository _repository;
+        private readonly ApplicationDbContext _db;
+
+
+        public BooksController()
+        {
+            _db = new ApplicationDbContext();
+            _repository = new BookRepository(new BookContext());
+        }
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -16,10 +28,7 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
-            
-
+            var book = _repository.GetBookById(id.Value);
             if (book != null)
             {
                 try
@@ -29,10 +38,11 @@ namespace AspBookLibrary.Controllers
                 }
                 catch
                 {
+                    // ignored
                 }
 
-                context.Books.Remove(book);
-                context.SaveChanges();
+                _repository.DeleteBook(id.Value);
+                _repository.Save();
 
                 return RedirectToAction("Index", "Manage");
             }
@@ -49,12 +59,19 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
-
+            var book = _repository.GetBookById(id.Value);
             if (book != null)
             {
-                return View(book);
+                var bookViewModel = new BookEditViewModel
+                {
+                    Author = book.Author,
+                    BookId = book.BookId,
+                    Description = book.Description,
+                    Genre = (GenreTypes)Enum.Parse(typeof(GenreTypes), book.Genre),
+                    Title = book.Title
+                };
+
+                return View(bookViewModel);
             }
             else
             {
@@ -63,14 +80,17 @@ namespace AspBookLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(BookModel model)
+        public ActionResult Edit(BookEditViewModel model)
         {
-            BookContext db = new BookContext();
-            var bookToUpdate = db.Books.Find(model.BookId);
-            bookToUpdate.Title = model.Title;
-            bookToUpdate.Author = model.Author;
-            bookToUpdate.Description = model.Description;
-            db.SaveChanges();
+            var book = _repository.GetBookById(model.BookId);
+
+            book.Title = model.Title;
+            book.Author = model.Author;
+            book.Description = model.Description;
+            book.Genre = model.Genre.ToString();
+
+            _repository.UpdateBook(book);
+            _repository.Save();
 
             ViewBag.StatusMessage = "Book information for " + model.Title + " was updated successfuly.";
 
@@ -87,32 +107,28 @@ namespace AspBookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var bookDb = new BookContext())
+                BookModel book = new BookModel
                 {
-                    BookModel book = new BookModel
-                    {
-                        Rating = 0,
-                        Author = model.Author,
-                        Description = model.Description,
-                        Title = model.Title
-                    };
+                    Rating = 0,
+                    Author = model.Author,
+                    Description = model.Description,
+                    Title = model.Title,
+                    Genre = model.Genre.ToString(),
+                    UserId = User.Identity.GetUserId()
+                };
 
-                    string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
-                    string bookPath = UploadFile(model.BookFile, "books");
+                string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
+                string bookPath = UploadFile(model.BookFile, "books");
 
-                    book.PictureFileUrl = imagePath;
-                    book.BookFileUrl = bookPath;
+                book.PictureFileUrl = imagePath;
+                book.BookFileUrl = bookPath;
 
-                    bookDb.Books.Add(book);
-                    int result = bookDb.SaveChanges();
-                }
+                _repository.InsertBook(book);
+                _repository.Save();
 
                 return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                return View(model);
-            }
+            return View(model);
         }
 
         public string UploadFile(HttpPostedFileBase file, string pathPart)

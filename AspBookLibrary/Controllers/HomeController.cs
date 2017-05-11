@@ -1,18 +1,19 @@
-﻿using System.Net.Cache;
-using System.Web.Mvc;
-using AspBookLibrary.App_Data;
-using AspBookLibrary.Migrations;
-using Microsoft.Ajax.Utilities;
+﻿using System.Web.Mvc;
 
 namespace AspBookLibrary.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBookRepository _repository;
+
+        public HomeController()
+        {
+            _repository = new BookRepository(new BookContext());
+        }
+
         public ActionResult Index ()
         {
-            BookContext context = new BookContext();
-            ViewBag.Books = context.Books;
-            ViewBag.Genres = context.Genres;
+            ViewBag.Books = _repository.GetBooks();
 
             return View();
         }

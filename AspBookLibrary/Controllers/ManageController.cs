@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspBookLibrary.App_Data;
 using AspBookLibrary.Migrations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -19,9 +18,13 @@ namespace AspBookLibrary.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly IBookRepository _repository;
+        private readonly ApplicationDbContext _db;
 
         public ManageController()
         {
+            _db = new ApplicationDbContext();
+            _repository = new BookRepository(new BookContext());
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -36,9 +39,9 @@ namespace AspBookLibrary.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -77,9 +80,8 @@ namespace AspBookLibrary.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
 
-            BookContext context = new BookContext();
-            ViewBag.Books = context.Books;
-            ViewBag.Genres = context.Genres;
+            ViewBag.Books = _repository.GetBooks().Where(book => book.UserId == User.Identity.GetUserId());
+            ViewBag.Users = _db.Users.ToList();
 
             return View(model);
         }

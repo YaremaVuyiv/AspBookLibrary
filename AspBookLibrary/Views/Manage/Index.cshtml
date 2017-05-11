@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="col">
-        <h5>Account settings 
+        <h5>Account settings
             @if (User.IsInRole(RoleTypes.Administrator.Get()))
             { <span class="badge badge-danger">@RoleTypes.Administrator.Get()</span> }
             @if (User.IsInRole(RoleTypes.Moderator.Get()))
@@ -45,7 +45,6 @@
             @if (User.IsInRole(RoleTypes.Member.Get()))
             { <span class="badge badge-success">@RoleTypes.Member.Get()</span> }
         </h5>
-        
         <div class="form-group">
             <a href="@Url.Action("EditUserInfo")" class="btn btn-secondary btn-block">Edit account details</a>
             <small class="form-text text-muted">You can change your avatar, first and last names, address and more.</small>
