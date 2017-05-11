@@ -1,4 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using AspBookLibrary.Extensions;
 
 namespace AspBookLibrary.Controllers
 {
@@ -18,16 +22,20 @@ namespace AspBookLibrary.Controllers
             return View();
         }
 
-        public ActionResult Genres()
+        public ActionResult Genres(string name)
         {
-            string[] pathToImages = new string[12];
+            var books = _repository.GetBooks();
+            var numberOfBooksForGenre =
+                Enum.GetNames(typeof(GenreTypes))
+                    .Select(
+                        genre =>
+                            new KeyValuePair<string, int>(genre, books.Where(b => b.Genre == genre).ToArray().Length))
+                    .ToList();
 
-            for (int i = 1; i <= 12; i++)
-            {
-                pathToImages[i-1] = i + ".png";
-            }
+            ViewBag.NumberOfBooksForGenre = numberOfBooksForGenre;
 
-            ViewBag.Paths = pathToImages;
+            if (name != null)
+                ViewBag.Books = books.Where(book => book.Genre == name);
 
             return View();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -88,6 +89,37 @@ namespace AspBookLibrary.Controllers
         }
 
         //
+        // GET: /Manage/Books
+        [Authorize(Roles = "Moderator")]
+        public ActionResult Books()
+        {
+            ViewBag.Books = _repository.GetBooks();
+
+            return View();
+        }
+
+        //
+        // DELETE: /Manage/DeleteBook
+        [Authorize(Roles = "Moderator")]
+        public ActionResult DeleteBook(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Books", "Manage");
+            }
+
+            var book = _repository.GetBookById(id.Value);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+
+            _repository.DeleteBook(id.Value);
+            _repository.Save();
+            return RedirectToAction("Books", "Manage");
+        }
+
+        //
         // GET: /Manage/Users
         [Authorize(Roles = "Manager")]
         public ActionResult Users()
@@ -100,23 +132,41 @@ namespace AspBookLibrary.Controllers
         //
         // DELETE: /Manage/DeleteUser
         [Authorize(Roles = "Manager")]
-        public async Task<ActionResult> DeleteUser(int? id)
+        public async Task<ActionResult> DeleteUser(string id)
         {
             if (id == null)
             {
                 return RedirectToAction("Users", "Manage");
             }
 
-            var user = _db.Users.Find(id);
-            if (user != null)
+            var user = UserManager.Users.SingleOrDefault(u => u.Id == id);
+            if (user == null)
             {
-                await UserManager.DeleteAsync(user);
+                return HttpNotFound();
+            }
+            if (user.Email == null)
+            {
+                user.Email = "null@gmail.com";
+                UserManager.Update(user);
+            }
 
+            foreach (var role in UserManager.GetRoles(id))
+            {
+                var remFromRole = await UserManager.RemoveFromRoleAsync(id, role);
+                if (!remFromRole.Succeeded)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+            }
+
+            var results = await UserManager.DeleteAsync(user);
+            if (results.Succeeded)
+            {
                 return RedirectToAction("Users", "Manage");
             }
             else
             {
-                return RedirectToAction("Users", "Manage");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
         }
 

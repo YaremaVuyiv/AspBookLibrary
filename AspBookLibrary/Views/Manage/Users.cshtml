@@ -1,4 +1,5 @@
 ﻿@using AspBookLibrary.Models
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "User Management";
 }
@@ -11,14 +12,31 @@
 }
 
 <div class="row">
-    <h5>User management</h5>
+    <div class="col-md-12 card card-inverse card-primary mb-3 text-center">
+        <div class="card-block">
+            <blockquote class="card-blockquote">
+                <p>Welcome to user management page. Here you can edit or delete users. Please be careful deleting users as they would never be recreated.</p>
+                <footer><b>User management</b></footer>
+            </blockquote>
+        </div>
+    </div>
     @foreach (ApplicationUser user in ViewBag.Users)
     {
         <div class="col-md-12 card" style="margin-bottom: 10px;">
             <div class="card-block">
-                <h4 class="card-title">@user.Email</h4>
-                <a href="@Url.Action("Edit", "Books", new {id = @user.Id})" class="card-link">Edit</a>
-                <a href="@Url.Action("DeleteUser", "Manage", new {id = @user.Id})" class="card-link">Delete</a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="card-title">@user.UserName</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="card-title">@user.Email</h5>
+                    </div>
+                </div>
+                @if (user.Id != User.Identity.GetUserId())
+                {
+                    <a href="@Url.Action("Edit", "Books", new { id = @user.Id})" class="card-link">Edit</a>
+                    <a href="@Url.Action("DeleteUser", "Manage", new {id = @user.Id})" class="card-link">Delete</a>
+                }
             </div>
         </div>
     }

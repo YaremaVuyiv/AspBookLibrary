@@ -29,27 +29,34 @@ namespace AspBookLibrary.Controllers
             }
 
             var book = _repository.GetBookById(id.Value);
+
+            // if user can delete this book
+
             if (book != null)
             {
-                try
+                if (User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId == User.Identity.GetUserId())
                 {
-                    System.IO.File.Delete("~/Content/books/" + book.BookFileUrl);
-                    System.IO.File.Delete("~/Content/images/thumbnails/" + book.PictureFileUrl);
-                }
-                catch
-                {
-                    // ignored
-                }
+                    try
+                    {
+                        System.IO.File.Delete("~/Content/books/" + book.BookFileUrl);
+                        System.IO.File.Delete("~/Content/images/thumbnails/" + book.PictureFileUrl);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
 
-                _repository.DeleteBook(id.Value);
-                _repository.Save();
+                    _repository.DeleteBook(id.Value);
+                    _repository.Save();
 
-                return RedirectToAction("Index", "Manage");
+                    ViewBag.StatusMessage = "Book was deleted!";
+                    return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
+                }
+                ViewBag.StatusMessage = "You cannot delete that book!";
+                return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
             }
-            else
-            {
-                return RedirectToAction("Index", "Manage");
-            }
+            ViewBag.StatusMessage = "Cannot find such book!";
+            return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
         }
 
         public ActionResult Edit(int? id)
@@ -62,27 +69,34 @@ namespace AspBookLibrary.Controllers
             var book = _repository.GetBookById(id.Value);
             if (book != null)
             {
-                var bookViewModel = new BookEditViewModel
+                if (User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId == User.Identity.GetUserId())
                 {
-                    Author = book.Author,
-                    BookId = book.BookId,
-                    Description = book.Description,
-                    Genre = (GenreTypes)Enum.Parse(typeof(GenreTypes), book.Genre),
-                    Title = book.Title
-                };
-
-                return View(bookViewModel);
+                    var bookViewModel = new BookEditViewModel
+                    {
+                        Author = book.Author,
+                        BookId = book.BookId,
+                        Description = book.Description,
+                        Genre = (GenreTypes) Enum.Parse(typeof(GenreTypes), book.Genre),
+                        Title = book.Title
+                    };
+                    return View(bookViewModel);
+                }
+                ViewBag.StatusMessage = "You cannot edit that book!";
+                return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
             }
-            else
-            {
-                return RedirectToAction("Index", "Manage");
-            }
+            return RedirectToAction("Index", "Manage");
         }
 
         [HttpPost]
         public ActionResult Edit(BookEditViewModel model)
         {
             var book = _repository.GetBookById(model.BookId);
+
+            if (!User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId != User.Identity.GetUserId())
+            {
+                ViewBag.StatusMessage = "You cannot edit that book!";
+                return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
+            }
 
             book.Title = model.Title;
             book.Author = model.Author;

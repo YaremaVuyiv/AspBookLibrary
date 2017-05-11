@@ -86,6 +86,7 @@ namespace AspBookLibrary.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
+                    ViewBag.HasError = true;
                     return View(model);
             }
         }
