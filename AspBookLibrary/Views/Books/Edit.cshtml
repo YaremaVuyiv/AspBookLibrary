@@ -5,7 +5,7 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Books", FormMethod.Post))
 {
     <p>Editing your uploaded book <strong>"@Model.Title"</strong>.</p>
     <br />

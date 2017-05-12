@@ -20,6 +20,16 @@
             </blockquote>
         </div>
     </div>
+    @if (ViewBag.StatusMessage != null && ViewBag.StatusMessage != "")
+    {
+        <div class="col-md-12 card card-inverse card-success mb-3 text-center">
+            <div class="card-block">
+                <blockquote class="card-blockquote">
+                    <footer><b>@ViewBag.StatusMessage</b></footer>
+                </blockquote>
+            </div>
+        </div>
+    }
     <div class="col-md-8">
         <div class="row">
             <h5>Your uploaded books</h5>

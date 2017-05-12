@@ -71,7 +71,7 @@ namespace AspBookLibrary.Controllers
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
-                : "";
+                : ViewBag.StatusMessage;
 
             var userId = User.Identity.GetUserId();
             var model = new IndexViewModel

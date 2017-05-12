@@ -92,7 +92,7 @@ namespace AspBookLibrary.Controllers
         {
             var book = _repository.GetBookById(model.BookId);
 
-            if (!User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId != User.Identity.GetUserId())
+            if (!User.IsInRole(RoleTypes.Moderator.Get()) && book.UserId != User.Identity.GetUserId())
             {
                 ViewBag.StatusMessage = "You cannot edit that book!";
                 return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);

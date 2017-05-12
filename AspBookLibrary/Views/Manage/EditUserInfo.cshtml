@@ -35,6 +35,8 @@
                 </div>
             </div>
 
+            @if (User.IsInRole("Manager"))
+            {
             <div class="form-group row">
                 @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-2" })
                 <div class="col-md-6">
@@ -42,7 +44,7 @@
                     @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger form-control-feedback" })
                 </div>
             </div>
-
+            }
             <div class="form-group row">
                 @Html.LabelFor(m => m.Address1, new {@class = "col-md-4 control-label"})
                 <div class="col-md-8">
