@@ -2321,10 +2321,10 @@ var ScrollSpy = function ($) {
       config = $.extend({}, Default, config);
 
       if (typeof config.target !== 'string') {
-        var id = $(config.target).attr('id');
+        var id = $(config.target).attr('bookId');
         if (!id) {
           id = Util.getUID(NAME);
-          $(config.target).attr('id', id);
+          $(config.target).attr('bookId', id);
         }
         config.target = '#' + id;
       }
@@ -2956,7 +2956,7 @@ var Tooltip = function ($) {
         var tip = this.getTipElement();
         var tipId = Util.getUID(this.constructor.NAME);
 
-        tip.setAttribute('id', tipId);
+        tip.setAttribute('bookId', tipId);
         this.element.setAttribute('aria-describedby', tipId);
 
         this.setContent();

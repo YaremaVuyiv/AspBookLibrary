@@ -1,5 +1,4 @@
-﻿@using System.Resources
-@using AspBookLibrary.Extensions
+﻿@using AspBookLibrary.Extensions
 @using AspBookLibrary.Models
 @model AspBookLibrary.Models.IndexViewModel
 @{
@@ -14,38 +13,47 @@
 }
 
 <div class="row">
-    <div class="col">
-        <h5>Your uploaded books</h5>
-
+    <div class="col-md-12 card card-inverse card-primary mb-3 text-center">
+        <div class="card-block">
+            <blockquote class="card-blockquote">
+                <footer><b>Welcome to your account management page</b></footer>
+            </blockquote>
+        </div>
+    </div>
+    <div class="col-md-8">
         <div class="row">
+            <h5>Your uploaded books</h5>
             @foreach (BookModel book in ViewBag.Books)
             {
-                <div class="col-sm-6" style="margin-bottom: 25px;">
-                    <div class="book-card-preview card card-inverse card-no-border">
-                        <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
-                        <div class="card-img-overlay">
-                            <h2 class="card-title">@book.Title</h2>
-                            <p class="card-text">@book.Description.</p>
-                            <p class="align-bottom">
-                                <a href="@Url.Action("Edit", "Books", new { id = @book.BookId })" class="btn btn-secondary">Edit</a>
-                                <a href="@Url.Action("Delete", "Books", new { id = @book.BookId })" class="btn btn-danger">Delete</a>
-                            </p>
+                <div class="col-md-12 card" style="margin-bottom: 10px;">
+                    <div class="card-block row">
+                        <div class="col-md-9">
+                            <h4 class="card-title">@book.Title</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="@Url.Action("Edit", "Books", new {id = @book.BookId})" class="btn btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete", "Books", new {id = @book.BookId})" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>
             }
         </div>
     </div>
-    <div class="col">
-        <h5>Account settings 
-            @if (User.IsInRole(RoleTypes.Administrator.Get()))
-            { <span class="badge badge-danger">@RoleTypes.Administrator.Get()</span> }
+    <div class="col-md-4">
+        <h5>Account settings
+            @if (User.IsInRole(RoleTypes.Manager.Get()))
+            {
+                <span class="badge badge-danger">@RoleTypes.Manager.Get()</span>
+            }
             @if (User.IsInRole(RoleTypes.Moderator.Get()))
-            { <span class="badge badge-primary">@RoleTypes.Moderator.Get()</span> }
+            {
+                <span class="badge badge-primary">@RoleTypes.Moderator.Get()</span>
+            }
             @if (User.IsInRole(RoleTypes.Member.Get()))
-            { <span class="badge badge-success">@RoleTypes.Member.Get()</span> }
+            {
+                <span class="badge badge-success">@RoleTypes.Member.Get()</span>
+            }
         </h5>
-        
         <div class="form-group">
             <a href="@Url.Action("EditUserInfo")" class="btn btn-secondary btn-block">Edit account details</a>
             <small class="form-text text-muted">You can change your avatar, first and last names, address and more.</small>
@@ -62,7 +70,7 @@
             }
             <small class="form-text text-muted">Choose strong password if you think your current password is too weak.</small>
         </div>
-        
+
         <div class="form-group">
             <a href="@Url.Action("ManageLogins")" class="btn btn-secondary btn-block">Manage your applications logins</a>
             <small class="form-text text-muted">Currently you have authentificated @Model.Logins.Count login methods.</small>

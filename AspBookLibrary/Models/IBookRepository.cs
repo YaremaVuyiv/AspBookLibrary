@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace AspBookLibrary.Models
 {
-    public interface IBookRepository: IDisposable
+    public interface IBookRepository
     {
-        IEnumerable<BookModel> GetBooks();
-        BookModel GetBookById(int? Id);
-        void InsertBook(BookModel book);
-        void DeleteBook(int? BookId);
-        void UpdateBook(BookModel book);
-        void Save();
+        void Update(BookModel book);
+        void Delete(BookModel book);
+        void Insert(BookModel book);
+        int Save();
+        List<BookModel> GetAll();
+        BookModel GetById(long id);
     }
 }

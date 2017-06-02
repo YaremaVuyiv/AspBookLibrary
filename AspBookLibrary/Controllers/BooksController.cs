@@ -1,24 +1,32 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AspBookLibrary.App_Data;
+using AspBookLibrary.Extensions;
 using AspBookLibrary.Models;
+using Microsoft.AspNet.Identity;
+using System.Security.Principal;
 
 namespace AspBookLibrary.Controllers
 {
+    [Culture]
     public class BooksController : Controller
     {
-        private IBookRepository bookRepository;
+        private readonly IBookRepository _repository;
+        private readonly ApplicationDbContext _db;
+
 
         public BooksController()
         {
-            this.bookRepository = new BookRepository(new BookContext());
+            _db = new ApplicationDbContext();
+            _repository = new BookRepository(new BookContext());
         }
 
-        public BooksController(IBookRepository context)
+        public BooksController(IBookRepository repository)
         {
-            bookRepository = context;
+            this._repository = repository;
+            this._db = new ApplicationDbContext();
         }
 
         public ActionResult Delete(int? id)
@@ -28,30 +36,35 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
+            var book = _repository.GetBookById(id.Value);
 
-            var book = bookRepository.GetBookById(id);
-
+            // if user can delete this book
 
             if (book != null)
             {
-                try
+                if (User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId == User.Identity.GetUserId())
                 {
-                    System.IO.File.Delete("~/Content/books/" + book.BookFileUrl);
-                    System.IO.File.Delete("~/Content/images/thumbnails/" + book.PictureFileUrl);
-                }
-                catch
-                {
-                }
+                    try
+                    {
+                        System.IO.File.Delete("~/Content/books/" + book.BookFileUrl);
+                        System.IO.File.Delete("~/Content/images/thumbnails/" + book.PictureFileUrl);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
 
-                bookRepository.DeleteBook(id);
-                bookRepository.Save();
+                    _repository.DeleteBook(id.Value);
+                    _repository.Save();
 
-                return RedirectToAction("Index", "Manage");
+                    ViewBag.StatusMessage = "Book was deleted!";
+                    return RedirectToAction("Index", "Manage", new { key = ViewBag.StatusMessage });
+                }
+                ViewBag.StatusMessage = "You cannot delete that book!";
+                return RedirectToAction("Index", "Manage", new { key = ViewBag.StatusMessage });
             }
-            else
-            {
-                return RedirectToAction("Index", "Manage");
-            }
+            ViewBag.StatusMessage = "Cannot find such book!";
+            return RedirectToAction("Index", "Manage", new { key = ViewBag.StatusMessage });
         }
 
         public ActionResult Edit(int? id)
@@ -61,28 +74,45 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
-
-            var book = bookRepository.GetBookById(id);
-
+            var book = _repository.GetBookById(id.Value);
             if (book != null)
             {
-                return View(book);
+                if (User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId == User.Identity.GetUserId())
+                {
+                    var bookViewModel = new BookEditViewModel
+                    {
+                        Author = book.Author,
+                        BookId = book.BookId,
+                        Description = book.Description,
+                        Genre = (GenreTypes) Enum.Parse(typeof(GenreTypes), book.Genre),
+                        Title = book.Title
+                    };
+                    return View(bookViewModel);
+                }
+                ViewBag.StatusMessage = "You cannot edit that book!";
+                return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
             }
-            else
-            {
-                return RedirectToAction("Index", "Manage");
-            }
+            return RedirectToAction("Index", "Manage");
         }
 
         [HttpPost]
-        public ActionResult Edit(BookModel model)
+        public ActionResult Edit(BookEditViewModel model)
         {
-            //BookContext db = new BookContext();
-            var bookToUpdate = bookRepository.GetBookById(model.BookId);
-            bookToUpdate.Title = model.Title;
-            bookToUpdate.Author = model.Author;
-            bookToUpdate.Description = model.Description;
-            bookRepository.Save();
+            var book = _repository.GetBookById(model.BookId);
+
+            if (!User.IsInRole(RoleTypes.Moderator.Get()) || book.UserId != User.Identity.GetUserId())
+            {
+                ViewBag.StatusMessage = "You cannot edit that book!";
+                return RedirectToAction("Index", "Manage", ViewBag.StatusMessage);
+            }
+
+            book.Title = model.Title;
+            book.Author = model.Author;
+            book.Description = model.Description;
+            book.Genre = model.Genre.ToString();
+
+            _repository.UpdateBook(book);
+            _repository.Save();
 
             ViewBag.StatusMessage = "Book information for " + model.Title + " was updated successfuly.";
 
@@ -99,13 +129,14 @@ namespace AspBookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 BookModel book = new BookModel
                 {
                     Rating = 0,
                     Author = model.Author,
                     Description = model.Description,
-                    Title = model.Title
+                    Title = model.Title,
+                    Genre = model.Genre.ToString(),
+                    UserId = User.Identity.GetUserId()
                 };
 
                 string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
@@ -114,17 +145,12 @@ namespace AspBookLibrary.Controllers
                 book.PictureFileUrl = imagePath;
                 book.BookFileUrl = bookPath;
 
-                bookRepository.InsertBook(book);
-                bookRepository.Save();
-
+                _repository.InsertBook(book);
+                _repository.Save();
 
                 return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                ViewBag.Error = "Fuck you";
-                return View(model);
-            }
+            return View(model);
         }
 
         public string UploadFile(HttpPostedFileBase file, string pathPart)

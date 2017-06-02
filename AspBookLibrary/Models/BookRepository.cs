@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AspBookLibrary.App_Data;
-using System.Data;
 using System.Data.Entity;
 
 namespace AspBookLibrary.Models
 {
-    public class BookRepository: IBookRepository, IDisposable
+    public class BookRepository: IBookRepository
     {
         private BookContext context;
 
@@ -17,55 +16,37 @@ namespace AspBookLibrary.Models
             this.context = context;
         }
 
-        public IEnumerable<BookModel> GetBooks()
+        public void Delete(BookModel book)
+        {
+            if(context.Books.Find(book) !=null)
+            {
+                context.Books.Remove(book);
+            }
+        }
+
+        public void Update(BookModel book)
+        {
+            context.Entry(book).State = EntityState.Modified;
+        }
+
+        public int Save()
+        {
+            return context.SaveChanges();
+        }
+        
+        public List<BookModel> GetAll()
         {
             return context.Books.ToList();
         }
 
-        public BookModel GetBookById(int? BookId)
+        public BookModel GetById(long id)
         {
-            return context.Books.Find(BookId);
+            return context.Books.Find(id);
         }
 
-        public void InsertBook(BookModel book)
+        public void Insert(BookModel book)
         {
             context.Books.Add(book);
-        }
-
-        public void DeleteBook(int? BookId)
-        {
-            BookModel book = context.Books.Find(BookId);
-            context.Books.Remove(book);
-        }
-
-        public void UpdateBook(BookModel book)
-        {
-            context.Entry(book).State = EntityState.Modified; throw new NotImplementedException();
-        }
-
-        public void Save()
-        {
-            context.SaveChanges();
-        }
-
-        private bool disposed = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    context.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
     }
 }

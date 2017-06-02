@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Web;
+﻿using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using AspBookLibrary.Extensions;
 
 namespace AspBookLibrary.Models
 {
@@ -11,22 +11,20 @@ namespace AspBookLibrary.Models
         [Key]
         public int BookId { get; set; }
 
-        [Required(ErrorMessage = "Title is required")]
+        public string UserId { get; set; }
+
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Author is required")]
         public string Author { get; set; }
 
-        [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
-        
-        [Range(0, 10, ErrorMessage = "Rating is between 0 and 10")]
+
         public int Rating { get; set; }
 
-        [Required(ErrorMessage ="File is required")]
+        public string Genre { get; set; }
+
         public string BookFileUrl { get; set; }
 
-        [Required(ErrorMessage = "File is required")]
         public string PictureFileUrl { get; set; }
     }
 
@@ -41,10 +39,32 @@ namespace AspBookLibrary.Models
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Genre is required")]
+        public GenreTypes Genre { get; set; }
+
         [Display(Name = "Image .png")]
+        [Required(ErrorMessage = "Image file is required")]
         public HttpPostedFileBase PictureFile { get; set; }
 
         [Display(Name = "Book .pdf")]
+        [Required(ErrorMessage = "Book PDF file is required")]
         public HttpPostedFileBase BookFile { get; set; }
+    }
+
+    public class BookEditViewModel
+    {
+        public int BookId { get; set; }
+
+        [Required(ErrorMessage = "Title is required")]
+        public string Title { get; set; }
+
+        [Required(ErrorMessage = "Author is required")]
+        public string Author { get; set; }
+
+        [Required(ErrorMessage = "Description is required")]
+        public string Description { get; set; }
+
+        [Required(ErrorMessage = "Genre is required")]
+        public GenreTypes Genre { get; set; }
     }
 }

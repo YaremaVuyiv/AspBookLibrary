@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspBookLibrary.App_Data;
+using System.Web.Security;
+using AspBookLibrary.Extensions;
 using AspBookLibrary.Migrations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -15,13 +17,18 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace AspBookLibrary.Controllers
 {
     [Authorize]
+    [Culture]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly IBookRepository _repository;
+        private readonly ApplicationDbContext _db;
 
         public ManageController()
         {
+            _db = new ApplicationDbContext();
+            _repository = new BookRepository(new BookContext());
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -36,9 +43,9 @@ namespace AspBookLibrary.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -77,11 +84,93 @@ namespace AspBookLibrary.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
 
-            BookContext context = new BookContext();
-            ViewBag.Books = context.Books;
-            ViewBag.Genres = context.Genres;
+            ViewBag.Books = _repository.GetBooks().Where(book => book.UserId == User.Identity.GetUserId());
+            ViewBag.Users = _db.Users.ToList();
 
             return View(model);
+        }
+
+        //
+        // GET: /Manage/Books
+        [Authorize(Roles = "Moderator")]
+        public ActionResult Books()
+        {
+            ViewBag.Books = _repository.GetBooks();
+
+            return View();
+        }
+
+        //
+        // DELETE: /Manage/DeleteBook
+        [Authorize(Roles = "Moderator")]
+        public ActionResult DeleteBook(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Books", "Manage");
+            }
+
+            var book = _repository.GetBookById(id.Value);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+
+            _repository.DeleteBook(id.Value);
+            _repository.Save();
+            return RedirectToAction("Books", "Manage");
+        }
+
+        //
+        // GET: /Manage/Users
+        [Authorize(Roles = "Manager")]
+        public ActionResult Users()
+        {
+            ViewBag.Users = _db.Users.ToList();
+
+            return View();
+        }
+
+        //
+        // DELETE: /Manage/DeleteUser
+        [Authorize(Roles = "Manager")]
+        public async Task<ActionResult> DeleteUser(string id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Users", "Manage");
+            }
+
+            var user = UserManager.Users.SingleOrDefault(u => u.Id == id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            if (user.Email == null)
+            {
+                user.Email = "null@gmail.com";
+                UserManager.Update(user);
+            }
+
+            foreach (var role in UserManager.GetRoles(id))
+            {
+                var remFromRole = await UserManager.RemoveFromRoleAsync(id, role);
+                if (!remFromRole.Succeeded)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+            }
+
+            var results = await UserManager.DeleteAsync(user);
+            if (results.Succeeded)
+            {
+                ViewBag.StatusMessage = "User deleted";
+                return RedirectToAction("Users", "Manage", new { key = ViewBag.StatusMessage });
+            }
+            else
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
         }
 
         //
@@ -144,12 +233,15 @@ namespace AspBookLibrary.Controllers
         public ActionResult EditUserInfo()
         {
             var user = UserManager.FindByIdAsync(User.Identity.GetUserId());
+            var role = UserManager.GetRoles(user.Result.Id).First();
+
             EditUserInformationViewModel model = new EditUserInformationViewModel
             {
                 Address1 = user.Result.Address1,
                 Address2 = user.Result.Address2,
                 Firstname = user.Result.Firstname,
-                Lastname = user.Result.Lastname
+                Lastname = user.Result.Lastname,
+                Role = (RoleTypes)Enum.Parse(typeof(RoleTypes), role)
             };
 
             ViewBag.AvatarUrl = user.Result.AvatarUrl;
@@ -183,6 +275,10 @@ namespace AspBookLibrary.Controllers
             user.Address1 = model.Address1;
             user.Address2 = model.Address2;
             user.AvatarUrl = fileName;
+
+            foreach (var role in UserManager.GetRoles(user.Id))
+                UserManager.RemoveFromRole(user.Id, role);
+            UserManager.AddToRole(user.Id, model.Role.Get());
 
             await manager.UpdateAsync(user);
 

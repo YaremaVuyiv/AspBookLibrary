@@ -39,18 +39,8 @@ textarea {
     font-family: 'Rubik Mono One', sans-serif;
 }
 
-.card-img-overlay {
-    background-color: rgba(0, 0, 0, 0.7)
-}
-
 .card-no-border, .input-no-border {
     border: none;
-}
-
-.card-img {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    margin-top: -100px;
 }
 
 .book-card-preview {
@@ -76,3 +66,39 @@ textarea {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+    .book-card-layout .card-img {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        margin-top: -100px;
+    }
+    .book-card-layout .card-img-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+.genre-card-layout {
+    overflow: hidden;
+    height: 210px;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+    .genre-card-layout .card-img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+
+    .genre-card-layout:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
+        .genre-card-layout:hover .card-img {
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+        }

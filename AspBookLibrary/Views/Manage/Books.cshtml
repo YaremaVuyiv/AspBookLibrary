@@ -1,0 +1,42 @@
+﻿@using AspBookLibrary.Models
+@{
+    ViewBag.Title = "Book Management";
+}
+
+@if (ViewBag.StatusMessage != null && ViewBag.StatusMessage != string.Empty)
+{
+    <div class="alert alert-success" role="alert">
+        <strong>Hey there!</strong> @ViewBag.StatusMessage
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-12 card card-inverse card-primary mb-3 text-center">
+        <div class="card-block">
+            <blockquote class="card-blockquote">
+                <p>Welcome to books management page. Here you can edit or delete books. Please be careful deleting books as they would never be recreated.</p>
+                <footer><b>Books management</b></footer>
+            </blockquote>
+        </div>
+    </div>
+    @foreach (BookModel book in ViewBag.Books)
+    {
+        <div class="col-md-12 card" style="margin-bottom: 10px;">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="card-title">@book.Title</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="card-title">@book.Genre</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="card-title">@book.Author</h5>
+                    </div>
+                </div>
+                <a href="@Url.Action("Edit", "Books", new { id = @book.BookId})" class="card-link">Edit</a>
+                <a href="@Url.Action("DeleteBook", "Manage", new { id = @book.BookId})" class="card-link">Delete</a>
+            </div>
+        </div>
+    }
+</div>

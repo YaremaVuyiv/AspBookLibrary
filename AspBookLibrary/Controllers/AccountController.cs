@@ -12,6 +12,7 @@ using AspBookLibrary.Models;
 namespace AspBookLibrary.Controllers
 {
     [Authorize]
+    [Culture]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -86,6 +87,7 @@ namespace AspBookLibrary.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
+                    ViewBag.HasError = true;
                     return View(model);
             }
         }

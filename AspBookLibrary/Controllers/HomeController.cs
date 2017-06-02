@@ -1,33 +1,71 @@
-﻿using System.Web.Mvc;
-using AspBookLibrary.App_Data;
-using AspBookLibrary.Migrations;
-using Microsoft.Ajax.Utilities;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using AspBookLibrary;
+using System.Web;
+using System;
 
 namespace AspBookLibrary.Controllers
 {
+    [Culture]
     public class HomeController : Controller
     {
-        public ActionResult Index ()
+        private readonly IBookRepository _repository;
+
+        public HomeController()
         {
-            BookContext context = new BookContext();
-            ViewBag.Books = context.Books;
-            ViewBag.Genres = context.Genres;
+            _repository = new BookRepository(new BookContext());
+        }
+
+        public ActionResult ChangeCulture(string lang)
+        {
+            string returnUrl = Request.UrlReferrer.AbsolutePath;
+
+            List<string> cultures = new List<string>() { "ru", "en", "de" };
+            if (!cultures.Contains(lang))
+            {
+                lang = "ru";
+            }
+
+            HttpCookie cookie = Request.Cookies["lang"];
+            if (cookie != null)
+                cookie.Value = lang;
+            else
+            {
+
+                cookie = new HttpCookie("lang");
+                cookie.HttpOnly = false;
+                cookie.Value = lang;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+            Response.Cookies.Add(cookie);
+            return Redirect(returnUrl);
+        }
+        public ActionResult Index()
+        {
+            ViewBag.Books = _repository.GetBooks().Take(3);
 
             return View();
         }
 
-        public ActionResult About ()
+        public ActionResult Books(string title, string genre)
         {
-            ViewBag.Message = "Your application description page.";
+            var books = _repository.GetBooks();
 
-            return View ();
-        }
+            if (!string.IsNullOrEmpty(genre))
+            {
+                ViewBag.Books = !string.IsNullOrEmpty(title)
+                    ? books.Where(book => book.Genre == genre && book.Title.ToLower().Contains(title.ToLower()))
+                    : books.Where(book => book.Genre == genre);
+            }
+            else
+            {
+                ViewBag.Books = !string.IsNullOrEmpty(title)
+                    ? books.Where(book => book.Title.ToLower().Contains(title.ToLower()))
+                    : books;
+            }
 
-        public ActionResult Contact ()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View ();
+            return View();
         }
     }
 }

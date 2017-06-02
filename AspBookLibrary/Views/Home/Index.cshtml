@@ -1,25 +1,37 @@
 ﻿@using AspBookLibrary.Models
+@using AspBookLibrary
 @{
     ViewBag.Title = "Home";
 }
 
+@Html.ActionLink("en", "ChangeCulture", "Home", new { lang = "en" }, null)
+@Html.ActionLink("ua", "ChangeCulture", "Home", new { lang = "ru" }, null)
+
 <div class="jumbotron">
-    <p class="lead text-center">Search for tons of books posted everyday for you on students book shelf</p>
-    <form class="row justify-content-center">
-        <input class="form-control form-control-lg col-md-8 input-no-border" style="border: none;" type="text" placeholder="Start typing . . .">
-    </form>
+    
+    <p class="lead text-center">@Resources.Resource.HomeTitle</p>
+    <div class="text-center">
+        @if (Request.IsAuthenticated)
+        {
+            <a href="@Url.Action("AddBook", "Books")" class="btn btn-lg btn-success">@Resources.Resource.IsAuthenticated</a>
+        }
+        else
+        {
+            @Html.ActionLink(Resources.Resource.LoginToStart, "Login", "Account", routeValues: new { returnUrl = "/manage" }, htmlAttributes: new { id = "loginLink", @class = "btn btn-lg btn-primary" })
+        }
+    </div>
 </div>
 
 <div class="row">
     @foreach (BookModel book in @ViewBag.Books)
     {
-        <div class="col-md-4" style="margin-bottom: 25px;">      
+        <div class="col-md-4" style="margin-bottom: 25px;">
             <div class="book-card-layout card card-inverse card-no-border">
                 <img class="card-img" src="~/Content/images/thumbnails/@book.PictureFileUrl" alt="@book.Title">
                 <div class="card-img-overlay">
                     <h2 class="card-title book-title-font">@book.Title</h2>
                     <p class="card-text">@book.Description.</p>
-                    <p class="align-bottom"><a class="btn btn-outline-secondary" href="~/Content/books/@book.BookFileUrl">Start Reading</a></p>
+                    <p class="align-bottom"><a class="btn btn-outline-secondary" href="~/Content/books/@book.BookFileUrl">@Resources.Resource.StartReading</a></p>
                 </div>
             </div>
         </div>

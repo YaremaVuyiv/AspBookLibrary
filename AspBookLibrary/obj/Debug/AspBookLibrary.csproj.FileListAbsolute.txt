@@ -198,11 +198,310 @@ C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookL
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.UserInfo.resources
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.AddedAvatar.resources
 C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.SafeMigration.resources
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\ApplicationInsights.config
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe.config
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Console.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Compression.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Pipes.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Claims.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Threading.Thread.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.ValueTuple.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.Initial.resources
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration.resources
+C:\Users\benov\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration2.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\ApplicationInsights.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.rsp
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.rsp
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.AppContext.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Console.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Compression.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Pipes.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Claims.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Threading.Thread.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.ValueTuple.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.rsp
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll.config
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.pdb
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\EntityFramework.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Owin.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Razor.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\WebGrease.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.pdb
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\EntityFramework.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.Razor.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csprojResolveAssemblyReference.cache
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialCreate.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialBaseline.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookMigration.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookContextMigration.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.UserInfo.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.AddedAvatar.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.SafeMigration.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.Initial.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration2.resources
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csproj.GenerateResource.Cache
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.dll
+C:\Users\andri\Desktop\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.pdb
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\ApplicationInsights.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.rsp
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.rsp
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.AppContext.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Console.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Compression.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Claims.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.ValueTuple.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.rsp
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll.config
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.pdb
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\EntityFramework.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Owin.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Razor.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\WebGrease.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.pdb
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\EntityFramework.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.Razor.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialCreate.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialBaseline.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookMigration.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.BookContextMigration.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.UserInfo.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.AddedAvatar.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.SafeMigration.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.Initial.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration2.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csproj.GenerateResource.Cache
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.pdb
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Resources.Resource.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\bin\ru\AspBookLibrary.resources.dll
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Resources.Resource.ru.resources
+C:\Users\Yarema\Documents\Visual Studio 2015\Projects\AspBookLibrary\AspBookLibrary\obj\Debug\ru\AspBookLibrary.resources.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.exe.config
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csc.rsp
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.exe.config
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\csi.rsp
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -214,56 +513,52 @@ C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Micros
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\Microsoft.Win32.Primitives.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.AppContext.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Console.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Compression.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.IO.Pipes.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Claims.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.ValueTuple.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.exe.config
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\vbc.rsp
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\ApplicationInsights.config
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll.config
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\AspBookLibrary.pdb
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\EntityFramework.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Owin.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Razor.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.dll
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\WebGrease.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\ru\AspBookLibrary.resources.dll
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.pdb
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\EntityFramework.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\EntityFramework.SqlServer.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Host.SystemWeb.xml
@@ -274,6 +569,8 @@ C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owi
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.xml
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Helpers.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Mvc.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Optimization.xml
@@ -281,16 +578,9 @@ C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.Ra
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\System.Web.WebPages.Razor.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Antlr3.Runtime.pdb
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Newtonsoft.Json.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\bin\Microsoft.AI.Web.xml
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialCreate.resources
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.InitialBaseline.resources
@@ -299,6 +589,12 @@ C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBook
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.UserInfo.resources
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.AddedAvatar.resources
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.SafeMigration.resources
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.Initial.resources
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration.resources
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Migrations.ChangeSeedConfiguration2.resources
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Resources.Resource.resources
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.Resources.Resource.ru.resources
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.csproj.GenerateResource.Cache
+C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\ru\AspBookLibrary.resources.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.dll
 C:\Users\Yarema\Documents\GitHub\AspBookLibrary\AspBookLibrary\obj\Debug\AspBookLibrary.pdb

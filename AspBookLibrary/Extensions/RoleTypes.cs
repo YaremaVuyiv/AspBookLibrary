@@ -10,8 +10,8 @@ namespace AspBookLibrary.Extensions
         Member,
         [Description("Moderator")]
         Moderator,
-        [Description("Administrator")]
-        Administrator
+        [Description("Manager")]
+        Manager
     }
 
     public static class RoleExtention
