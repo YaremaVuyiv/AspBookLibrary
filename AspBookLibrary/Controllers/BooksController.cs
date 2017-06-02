@@ -9,6 +9,18 @@ namespace AspBookLibrary.Controllers
 {
     public class BooksController : Controller
     {
+        private IBookRepository bookRepository;
+
+        public BooksController()
+        {
+            this.bookRepository = new BookRepository(new BookContext());
+        }
+
+        public BooksController(IBookRepository context)
+        {
+            bookRepository = context;
+        }
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -16,9 +28,9 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
-            
+
+            var book = bookRepository.GetBookById(id);
+
 
             if (book != null)
             {
@@ -31,8 +43,8 @@ namespace AspBookLibrary.Controllers
                 {
                 }
 
-                context.Books.Remove(book);
-                context.SaveChanges();
+                bookRepository.DeleteBook(id);
+                bookRepository.Save();
 
                 return RedirectToAction("Index", "Manage");
             }
@@ -49,8 +61,8 @@ namespace AspBookLibrary.Controllers
                 return RedirectToAction("Index", "Manage");
             }
 
-            BookContext context = new BookContext();
-            var book = context.Books.Find(id);
+
+            var book = bookRepository.GetBookById(id);
 
             if (book != null)
             {
@@ -65,12 +77,12 @@ namespace AspBookLibrary.Controllers
         [HttpPost]
         public ActionResult Edit(BookModel model)
         {
-            BookContext db = new BookContext();
-            var bookToUpdate = db.Books.Find(model.BookId);
+            //BookContext db = new BookContext();
+            var bookToUpdate = bookRepository.GetBookById(model.BookId);
             bookToUpdate.Title = model.Title;
             bookToUpdate.Author = model.Author;
             bookToUpdate.Description = model.Description;
-            db.SaveChanges();
+            bookRepository.Save();
 
             ViewBag.StatusMessage = "Book information for " + model.Title + " was updated successfuly.";
 
@@ -87,30 +99,30 @@ namespace AspBookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var bookDb = new BookContext())
+
+                BookModel book = new BookModel
                 {
-                    BookModel book = new BookModel
-                    {
-                        Rating = 0,
-                        Author = model.Author,
-                        Description = model.Description,
-                        Title = model.Title
-                    };
+                    Rating = 0,
+                    Author = model.Author,
+                    Description = model.Description,
+                    Title = model.Title
+                };
 
-                    string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
-                    string bookPath = UploadFile(model.BookFile, "books");
+                string imagePath = UploadFile(model.PictureFile, "images/thumbnails");
+                string bookPath = UploadFile(model.BookFile, "books");
 
-                    book.PictureFileUrl = imagePath;
-                    book.BookFileUrl = bookPath;
+                book.PictureFileUrl = imagePath;
+                book.BookFileUrl = bookPath;
 
-                    bookDb.Books.Add(book);
-                    int result = bookDb.SaveChanges();
-                }
+                bookRepository.InsertBook(book);
+                bookRepository.Save();
+
 
                 return RedirectToAction("Index", "Home");
             }
             else
             {
+                ViewBag.Error = "Fuck you";
                 return View(model);
             }
         }
